@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2020": true
+    },
+    "extends": ["airbnb", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
+    "rules": {
+        "no-plusplus": "off",
+        "eqeqeq": "off",
+        "no-restricted-syntax": "off",
+        "no-continue": "off"
+    }
+}
