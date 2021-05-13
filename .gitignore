@@ -1,1 +1,7 @@
 node_modules/
+.eslintrc.json
+.vscode/launch.json
+
+# test file
+test.js
+fakeData.txt

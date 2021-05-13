@@ -10,12 +10,19 @@ const fs = require('fs')
 // const { findXMAWeakness, findEncryptionWeakness } = require('./Day9/findXMASWeakness.js');
 // const { countJoltDifference, countArrangement } = require('./Day10/countJoltDifference.js');
 // const { calculateSeat } = require('./Day11/calculateSeat.js');
+// const {
+//     calculateDistance,
+//     moveByWaypoint,
+// } = require('./Day12/calculateDistance.js')
 const {
-    calculateDistance,
-    moveByWaypoint,
-} = require('./Day12/calculateDistance.js')
+    findClosestBus,
+    findMatchingTimeStamp,
+    minTimestampOfTwoBus,
+    minTimestampOfTwoTimestamp,
+    findGCD,
+} = require('./Day13/findClosestBus.js')
 
-let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
+// let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
 // let day2Data = fs.readFileSync('./Day2/data.txt', 'utf8');
 // let day3Data = fs.readFileSync('./Day3/data.txt', 'utf8');
@@ -27,7 +34,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day9Data = fs.readFileSync('./Day9/data.txt', 'utf-8');
 // let day10Data = fs.readFileSync('./Day10/data.txt', 'utf-8');
 // let day11Data = fs.readFileSync('./Day11/data.txt', 'utf-8');
-const day12Data = fs.readFileSync('./Day12/data.txt', 'utf-8')
+// const day12Data = fs.readFileSync('./Day12/data.txt', 'utf-8')
+const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -101,20 +109,18 @@ const day12Data = fs.readFileSync('./Day12/data.txt', 'utf-8')
 // console.log('Final seat amount: ', CalculateSeat(seatArr, 5))
 
 // Day 12
-const directionArr = day12Data.split('\n')
-const fakeDirectionArr = fakeData.split('\n')
+// const directionArr = day12Data.split('\n')
 
 // console.log('Manhattan distance: ', calculateDistance(directionArr))
+
 // console.log(
 //     'Manhattan distance(Move by waypoint): ',
-//     moveByWaypoint(fakeDirectionArr)
+//     moveByWaypoint(directionArr)
 // )
-console.log(
-    'Manhattan distance(Move by waypoint): ',
-    moveByWaypoint(directionArr)
-)
-// 86336
-// 54664
-// 53918
-// 133890
-// 42908
+// Day 13
+// const busData = day13Data.split('\n')
+
+// console.log('Closest Bus: ', findClosestBus(busData))
+// console.log('Timestamp: ', findMatchingTimeStamp(busData))
+
+// Day 14
