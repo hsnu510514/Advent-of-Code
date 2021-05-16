@@ -14,15 +14,17 @@ const fs = require('fs')
 //     calculateDistance,
 //     moveByWaypoint,
 // } = require('./Day12/calculateDistance.js')
-const {
-    findClosestBus,
-    findMatchingTimeStamp,
-    minTimestampOfTwoBus,
-    minTimestampOfTwoTimestamp,
-    findGCD,
-} = require('./Day13/findClosestBus.js')
+// const {
+//     findClosestBus,
+//     findMatchingTimeStamp,
+//     minTimestampOfTwoBus,
+//     minTimestampOfTwoTimestamp,
+//     findGCD,
+// } = require('./Day13/findClosestBus.js')
+// const { readMemoryWithMask } = require('./Day14/readMemoryWithMask.js')
+const { answerOfMemoryGame } = require('./Day15/answerOfMemoryGame.js')
 
-// let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
+let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
 // let day2Data = fs.readFileSync('./Day2/data.txt', 'utf8');
 // let day3Data = fs.readFileSync('./Day3/data.txt', 'utf8');
@@ -35,7 +37,9 @@ const {
 // let day10Data = fs.readFileSync('./Day10/data.txt', 'utf-8');
 // let day11Data = fs.readFileSync('./Day11/data.txt', 'utf-8');
 // const day12Data = fs.readFileSync('./Day12/data.txt', 'utf-8')
-const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
+// const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
+// const day14Data = fs.readFileSync('./Day14/data.txt', 'utf-8')
+const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -124,3 +128,17 @@ const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
 // console.log('Timestamp: ', findMatchingTimeStamp(busData))
 
 // Day 14
+// let maskActionArr = day14Data.split('\n')
+
+// console.log(readMemoryWithMask(maskActionArr, 'value'))
+// console.log(readMemoryWithMask(maskActionArr))
+
+// Day 15
+// let startNumberArr = day15Data.split(',')
+
+// console.log('2020th number spoken: ', answerOfMemoryGame(startNumberArr, 2020))
+// console.log(
+//     '30000000th number spoken: ',
+//     answerOfMemoryGame(startNumberArr, 30000000)
+// )
+// !!Consume too much time
