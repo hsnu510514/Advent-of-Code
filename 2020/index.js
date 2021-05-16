@@ -22,7 +22,13 @@ const fs = require('fs')
 //     findGCD,
 // } = require('./Day13/findClosestBus.js')
 // const { readMemoryWithMask } = require('./Day14/readMemoryWithMask.js')
-const { answerOfMemoryGame } = require('./Day15/answerOfMemoryGame.js')
+// const { answerOfMemoryGame } = require('./Day15/answerOfMemoryGame.js')
+const {
+    validateTicket,
+    findFieldSequence,
+    allocateField,
+    getMultiplied,
+} = require('./Day16/validateTicket.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -39,7 +45,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day12Data = fs.readFileSync('./Day12/data.txt', 'utf-8')
 // const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
 // const day14Data = fs.readFileSync('./Day14/data.txt', 'utf-8')
-const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
+// const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
+const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -142,3 +149,20 @@ const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
 //     answerOfMemoryGame(startNumberArr, 30000000)
 // )
 // !!Consume too much time
+
+// Day 16
+// const [ticketTemplate, myTicket, nearbyTicket] = day16Data.split('\n\n')
+// // const [ticketTemplate, myTicket, nearbyTicket] = fakeData.split('\n\n')
+// const [ticketScanningError, validTicketArr] = validateTicket(
+//     ticketTemplate,
+//     nearbyTicket
+// )
+// const fieldSequence = findFieldSequence(ticketTemplate, validTicketArr)
+// console.log('Ticket scanning error rate: ', ticketScanningError)
+// // console.log('Ticket field sequence: ', fieldSequence)
+// const allocateFieldArr = allocateField(ticketTemplate, fieldSequence)
+// console.log('Field sequence: ', allocateFieldArr)
+// console.log(
+//     'Get the  "Departure field" Multiplied: ',
+//     getMultiplied(myTicket, allocateFieldArr)
+// )
