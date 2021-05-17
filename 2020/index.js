@@ -29,6 +29,7 @@ const {
     allocateField,
     getMultiplied,
 } = require('./Day16/validateTicket.js')
+const { countActiveCube } = require('./Day17/countActiveCube.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -46,7 +47,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day13Data = fs.readFileSync('./Day13/data.txt', 'utf-8')
 // const day14Data = fs.readFileSync('./Day14/data.txt', 'utf-8')
 // const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
-const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
+// const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
+const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -166,3 +168,15 @@ const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
 //     'Get the  "Departure field" Multiplied: ',
 //     getMultiplied(myTicket, allocateFieldArr)
 // )
+
+// Day 17
+const initialCubeState = day17Data.split('\n').map((row) => row.split(''))
+const fakeCubeState = fakeData.split('\n').map((row) => row.split(''))
+// console.log(
+//     'Active cubes after 6 cycle: ',
+//     countActiveCube(initialCubeState, 6)
+// )
+console.log(
+    'Active cubes after 6 cycle: ',
+    countActiveCube(initialCubeState, 6, true)
+)
