@@ -23,13 +23,14 @@ const fs = require('fs')
 // } = require('./Day13/findClosestBus.js')
 // const { readMemoryWithMask } = require('./Day14/readMemoryWithMask.js')
 // const { answerOfMemoryGame } = require('./Day15/answerOfMemoryGame.js')
-const {
-    validateTicket,
-    findFieldSequence,
-    allocateField,
-    getMultiplied,
-} = require('./Day16/validateTicket.js')
-const { countActiveCube } = require('./Day17/countActiveCube.js')
+// const {
+//     validateTicket,
+//     findFieldSequence,
+//     allocateField,
+//     getMultiplied,
+// } = require('./Day16/validateTicket.js')
+// const { countActiveCube } = require('./Day17/countActiveCube.js')
+const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -48,7 +49,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day14Data = fs.readFileSync('./Day14/data.txt', 'utf-8')
 // const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
 // const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
-const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
+// const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
+const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -170,13 +172,22 @@ const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
 // )
 
 // Day 17
-const initialCubeState = day17Data.split('\n').map((row) => row.split(''))
-const fakeCubeState = fakeData.split('\n').map((row) => row.split(''))
+// const initialCubeState = day17Data.split('\n').map((row) => row.split(''))
+// const fakeCubeState = fakeData.split('\n').map((row) => row.split(''))
+// // console.log(
+// //     'Active cubes after 6 cycle: ',
+// //     countActiveCube(initialCubeState, 6)
+// // )
 // console.log(
 //     'Active cubes after 6 cycle: ',
-//     countActiveCube(initialCubeState, 6)
+//     countActiveCube(initialCubeState, 6, true)
 // )
+
+// Day 18
+
+// console.log('Sum of the homework: ', sumOfTheHomework(fakeData, 'addition'))
+// console.log('Sum of the homework: ', sumOfTheHomework(day18Data))
 console.log(
-    'Active cubes after 6 cycle: ',
-    countActiveCube(initialCubeState, 6, true)
+    'Sum of the homework(addition first): ',
+    sumOfTheHomework(day18Data, 'addition')
 )
