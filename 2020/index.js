@@ -31,6 +31,7 @@ const fs = require('fs')
 // } = require('./Day16/validateTicket.js')
 // const { countActiveCube } = require('./Day17/countActiveCube.js')
 const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
+const { findValidMessage } = require('./Day19/findValidMessage.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -50,7 +51,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day15Data = fs.readFileSync('./Day15/data.txt', 'utf-8')
 // const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
 // const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
-const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
+// const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
+const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -187,7 +189,24 @@ const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
 
 // console.log('Sum of the homework: ', sumOfTheHomework(fakeData, 'addition'))
 // console.log('Sum of the homework: ', sumOfTheHomework(day18Data))
+// console.log(
+//     'Sum of the homework(addition first): ',
+//     sumOfTheHomework(day18Data, 'addition')
+// )
+
+// Day 19
+// console.log(
+//     'Number of valid message: ',
+//     findValidMessage(fakeData, {
+//         8: ['42', '42 8'],
+//         11: ['42 31', '42 11 31'],
+//     })
+// )
+// console.log('Number of valid message: ', findValidMessage(day19Data))
 console.log(
-    'Sum of the homework(addition first): ',
-    sumOfTheHomework(day18Data, 'addition')
+    'Number of valid message(update rules): ',
+    findValidMessage(day19Data, {
+        8: ['42', '42 8'],
+        11: ['42 31', '42 11 31'],
+    })
 )
