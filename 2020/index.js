@@ -224,5 +224,3 @@ console.log(
     '# not part of a sea monster: ',
     countHash(completePicture, monster)
 )
-
-// 1231345
