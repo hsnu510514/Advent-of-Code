@@ -67,7 +67,6 @@ const findValidMessage = (messageData, updateRule = {}) => {
             message = message.slice(rule31Length)
             rule31Count++
         }
-        console.log(message, rule42Count, rule31Count)
 
         return (
             message === '' &&
@@ -81,9 +80,7 @@ const findValidMessage = (messageData, updateRule = {}) => {
         const ruleName = rule.split(':')[0]
         decodeMap[ruleName] = decodeRule(ruleName)
     })
-    console.log(decodeMap)
-
-    console.log('lengthArr', loopLengthArr)
+    // console.log(decodeMap)
 
     let ans
 

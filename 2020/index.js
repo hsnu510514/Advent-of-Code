@@ -30,8 +30,9 @@ const fs = require('fs')
 //     getMultiplied,
 // } = require('./Day16/validateTicket.js')
 // const { countActiveCube } = require('./Day17/countActiveCube.js')
-const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
-const { findValidMessage } = require('./Day19/findValidMessage.js')
+// const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
+// const { findValidMessage } = require('./Day19/findValidMessage.js')
+const { readPuzzle, combinePuzzle, countHash } = require('./Day20/puzzle.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -52,7 +53,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day16Data = fs.readFileSync('./Day16/data.txt', 'utf-8')
 // const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
 // const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
-const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
+// const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
+const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -203,10 +205,24 @@ const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
 //     })
 // )
 // console.log('Number of valid message: ', findValidMessage(day19Data))
+// console.log(
+//     'Number of valid message(update rules): ',
+//     findValidMessage(day19Data, {
+//         8: ['42', '42 8'],
+//         11: ['42 31', '42 11 31'],
+//     })
+// )
+
+// Day 20
+const organizedPuzzleDate = readPuzzle(day20Data)
+// const organizedPuzzleDate = readPuzzle(fakeData)
+
+const completePicture = combinePuzzle(organizedPuzzleDate[0])
+const monster = organizedPuzzleDate[1]
+
 console.log(
-    'Number of valid message(update rules): ',
-    findValidMessage(day19Data, {
-        8: ['42', '42 8'],
-        11: ['42 31', '42 11 31'],
-    })
+    '# not part of a sea monster: ',
+    countHash(completePicture, monster)
 )
+
+// 1231345
