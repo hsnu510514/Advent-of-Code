@@ -32,7 +32,8 @@ const fs = require('fs')
 // const { countActiveCube } = require('./Day17/countActiveCube.js')
 // const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
 // const { findValidMessage } = require('./Day19/findValidMessage.js')
-const { readPuzzle, combinePuzzle, countHash } = require('./Day20/puzzle.js')
+// const { readPuzzle, combinePuzzle, countHash } = require('./Day20/puzzle.js')
+const { readIngredient, testIngredient } = require('./Day21/testIngredient')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -54,7 +55,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day17Data = fs.readFileSync('./Day17/data.txt', 'utf-8')
 // const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
 // const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
-const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
+// const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
+const day21Data = fs.readFileSync('./Day21/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -214,13 +216,18 @@ const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
 // )
 
 // Day 20
-const organizedPuzzleDate = readPuzzle(day20Data)
+// const organizedPuzzleDate = readPuzzle(day20Data)
 // const organizedPuzzleDate = readPuzzle(fakeData)
 
-const completePicture = combinePuzzle(organizedPuzzleDate[0])
-const monster = organizedPuzzleDate[1]
+// const completePicture = combinePuzzle(organizedPuzzleDate[0])
+// const monster = organizedPuzzleDate[1]
 
-console.log(
-    '# not part of a sea monster: ',
-    countHash(completePicture, monster)
-)
+// console.log(
+//     '# not part of a sea monster: ',
+//     countHash(completePicture, monster)
+// )
+
+// Day 21
+// const ingredientAllergenArr = readIngredient(fakeData)
+const ingredientAllergenArr = readIngredient(day21Data)
+console.log(testIngredient(ingredientAllergenArr))
