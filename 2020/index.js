@@ -33,7 +33,8 @@ const fs = require('fs')
 // const { sumOfTheHomework } = require('./Day18/sumOfTheHomework.js')
 // const { findValidMessage } = require('./Day19/findValidMessage.js')
 // const { readPuzzle, combinePuzzle, countHash } = require('./Day20/puzzle.js')
-const { readIngredient, testIngredient } = require('./Day21/testIngredient')
+// const { readIngredient, testIngredient } = require('./Day21/testIngredient')
+const { playGame } = require('./Day22/game')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -56,7 +57,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day18Data = fs.readFileSync('./Day18/data.txt', 'utf-8')
 // const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
 // const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
-const day21Data = fs.readFileSync('./Day21/data.txt', 'utf-8')
+// const day21Data = fs.readFileSync('./Day21/data.txt', 'utf-8')
+const day22Data = fs.readFileSync('./Day22/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -229,5 +231,10 @@ const day21Data = fs.readFileSync('./Day21/data.txt', 'utf-8')
 
 // Day 21
 // const ingredientAllergenArr = readIngredient(fakeData)
-const ingredientAllergenArr = readIngredient(day21Data)
-console.log(testIngredient(ingredientAllergenArr))
+// const ingredientAllergenArr = readIngredient(day21Data)
+// console.log(testIngredient(ingredientAllergenArr))
+
+// Day 22
+// console.log(playGame(fakeData, true))
+console.log('Regular Combat: ', playGame(day22Data))
+console.log('Recursive Combat: ', playGame(day22Data, true))
