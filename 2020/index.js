@@ -35,6 +35,7 @@ const fs = require('fs')
 // const { readPuzzle, combinePuzzle, countHash } = require('./Day20/puzzle.js')
 // const { readIngredient, testIngredient } = require('./Day21/testIngredient')
 const { playGame } = require('./Day22/game')
+const { cupGame } = require('./Day23/cupGame.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -236,5 +237,15 @@ const day22Data = fs.readFileSync('./Day22/data.txt', 'utf-8')
 
 // Day 22
 // console.log(playGame(fakeData, true))
-console.log('Regular Combat: ', playGame(day22Data))
-console.log('Recursive Combat: ', playGame(day22Data, true))
+// console.log('Regular Combat: ', playGame(day22Data))
+// console.log('Recursive Combat: ', playGame(day22Data, true))
+
+// Day 23
+// console.log(
+//     'Labels on the cups after cup 1: ',
+//     cupGame('389125467', 10000000, true)
+// )
+console.log(
+    'Labels on the cups after cup 1: ',
+    cupGame('318946572', 10000000, true)
+)
