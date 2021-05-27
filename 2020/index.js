@@ -36,6 +36,7 @@ const fs = require('fs')
 // const { readIngredient, testIngredient } = require('./Day21/testIngredient')
 const { playGame } = require('./Day22/game')
 const { cupGame } = require('./Day23/cupGame.js')
+const { countBlackTiles } = require('./Day24/countBlackTiles.js')
 
 let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // let day1Data = fs.readFileSync('./Day1/data.txt', 'utf8');
@@ -59,7 +60,8 @@ let fakeData = fs.readFileSync('../fakeData.txt', 'utf8')
 // const day19Data = fs.readFileSync('./Day19/data.txt', 'utf-8')
 // const day20Data = fs.readFileSync('./Day20/data.txt', 'utf-8')
 // const day21Data = fs.readFileSync('./Day21/data.txt', 'utf-8')
-const day22Data = fs.readFileSync('./Day22/data.txt', 'utf-8')
+// const day22Data = fs.readFileSync('./Day22/data.txt', 'utf-8')
+const day24Data = fs.readFileSync('./Day24/data.txt', 'utf-8')
 
 // Day 1
 // let sortedDataArr = day1Data.split('\n').sort((a,b)=> a-b);
@@ -245,7 +247,12 @@ const day22Data = fs.readFileSync('./Day22/data.txt', 'utf-8')
 //     'Labels on the cups after cup 1: ',
 //     cupGame('389125467', 10000000, true)
 // )
-console.log(
-    'Labels on the cups after cup 1: ',
-    cupGame('318946572', 10000000, true)
-)
+// console.log(
+//     'Labels on the cups after cup 1: ',
+//     cupGame('318946572', 10000000, true)
+// )
+
+// Day 24
+// console.log('Black tile number: ', countBlackTiles(fakeData))
+// console.log('Black tile number: ', countBlackTiles(day24Data))
+// console.log('Black tile number after 1 day: ', countBlackTiles(day24Data, 100))
