@@ -245,13 +245,14 @@ const day25Data = fs.readFileSync('./Day25/data.txt', 'utf-8')
 // console.log('Recursive Combat: ', playGame(day22Data, true))
 
 // Day 23
+// console.log('Labels on the cups after cup 1: ', cupGame('318946572', 100))
 // console.log(
 //     'Labels on the cups after cup 1: ',
-//     cupGame('389125467', 10000000, true)
+//     cupGame('389125467', 10_000_000, true)
 // )
 // console.log(
 //     'Labels on the cups after cup 1: ',
-//     cupGame('318946572', 10000000, true)
+//     cupGame('318946572', 10_000_000, true)
 // )
 
 // Day 24
@@ -260,6 +261,6 @@ const day25Data = fs.readFileSync('./Day25/data.txt', 'utf-8')
 // console.log('Black tile number after 1 day: ', countBlackTiles(day24Data, 100))
 
 // Day 25
-const [cardKey, doorKey] = day25Data.split('\n').map((key) => parseInt(key))
-const [cardKey, doorKey] = fakeData.split('\n').map((key) => parseInt(key))
-console.log('Encryption key: ', getEncryptionKey(cardKey, doorKey))
+// const [cardKey, doorKey] = day25Data.split('\n').map((key) => parseInt(key))
+// const [cardKey, doorKey] = fakeData.split('\n').map((key) => parseInt(key))
+// console.log('Encryption key: ', getEncryptionKey(cardKey, doorKey))

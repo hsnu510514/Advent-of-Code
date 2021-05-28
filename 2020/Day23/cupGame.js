@@ -1,19 +1,21 @@
 const cupGame = (cupData, moves, crabStyle = false) => {
+    let cupMap = {}
     let cupArr = cupData.split('').map((int) => parseInt(int))
-    const max = Math.max(...cupArr)
+    const max = crabStyle ? 1_000_000 : Math.max(...cupArr)
     const min = Math.min(...cupArr)
-    let idx = 0
+    let current = cupArr[0]
     let move = 0
 
     const moveCup = () => {
-        let current = cupArr[idx]
         // console.log('current: ', current)
 
-        let pickup = cupArr.splice(idx + 1, 3)
-        let offset = 3 - pickup.length
-        if (offset > 0) {
-            pickup = pickup.concat(cupArr.splice(0, offset))
-        }
+        let first = cupMap[current]
+        let second = cupMap[first]
+        let third = cupMap[second]
+
+        cupMap[current] = cupMap[third]
+
+        let pickup = [first, second, third]
         // console.log('pickup: ', pickup)
 
         destination = current - 1
@@ -23,21 +25,31 @@ const cupGame = (cupData, moves, crabStyle = false) => {
                 destination = max
             }
         }
-        let destIdx = cupArr.indexOf(destination)
+
+        cupMap[third] = cupMap[destination]
+        cupMap[destination] = first
         // console.log('destination: ', destination)
-
-        cupArr.splice(destIdx + 1, 0, ...pickup)
-
-        idx = (cupArr.indexOf(current) + 1) % cupArr.length
+        current = cupMap[current]
     }
 
     const getCupsAfterLabel = (label) => {
-        let idx = cupArr.indexOf(label)
-        return [...cupArr.slice(idx), ...cupArr.slice(0, idx)]
+        let idx = cupMap[label]
+        let ans = `${label}, `
+        let count = 10
+        let i = 0
+
+        // while (idx !== label) {
+        while (i < count) {
+            ans += `${idx}, `
+            idx = cupMap[idx]
+            i++
+        }
+
+        return ans
     }
 
     if (crabStyle) {
-        bigCupArr = Array(1000000)
+        let bigCupArr = Array(1_000_000)
             .fill(0)
             .map((_, idx) => idx + 1)
 
@@ -45,17 +57,31 @@ const cupGame = (cupData, moves, crabStyle = false) => {
         cupArr = bigCupArr
     }
 
-    while (move < moves) {
-        if (move % 10000 === 0) {
-            console.log(`Move ${move + 1}: `)
+    cupArr.forEach((int, i) => {
+        if (i !== cupArr.length - 1) {
+            cupMap[int] = cupArr[i + 1]
+        } else {
+            cupMap[int] = cupArr[0]
         }
-        // console.log(cupArr)
+    })
+    // console.log(cupArr)
+    // console.log(cupMap)
+    while (move < moves) {
         moveCup()
         move++
     }
 
-    console.log(cupArr)
-
+    // console.log(cupMap[1_000_000])
+    // Object.keys(cupMap).forEach((key) => {
+    //     if (
+    //         cupMap[key] === 934001 ||
+    //         cupMap[key] === 159792 ||
+    //         cupMap[key] === 1
+    //     ) {
+    //         console.log(key, cupMap[key])
+    //     }
+    // })
+    console.log(cupMap[1] * cupMap[cupMap[1]])
     return getCupsAfterLabel(1)
 }
 
